@@ -141,7 +141,7 @@ test_pipeline = val_pipeline
 
 data_root = 'data/coco'
 data = dict(
-    samples_per_gpu=32,
+    samples_per_gpu=32,  
     workers_per_gpu=2,
     val_dataloader=dict(samples_per_gpu=32),
     test_dataloader=dict(samples_per_gpu=32),
@@ -154,7 +154,7 @@ data = dict(
         dataset_info={{_base_.dataset_info}}),
     val=dict(
         type='TopDownCocoDataset',
-        ann_file=f'{data_root}/annotations/person_keypoints_val2017.json',
+        ann_file=f'{data_root}/annotations/person_keypoints_val2017.json', # 标注文件的路径
         img_prefix=f'{data_root}/val2017/',
         data_cfg=data_cfg,
         pipeline=val_pipeline,
